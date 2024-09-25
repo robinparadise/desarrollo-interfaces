@@ -34,12 +34,24 @@
    - Creación de componentes interactivos
    - APIs del navegador y su uso en interfaces
 
-### 3. Frameworks y Librerías para Interfaces
-1. **CSS Frameworks (Bootstrap, Tailwind CSS)**  
+3. **CSS Frameworks (Bootstrap, Tailwind CSS)**  
    - Ventajas y desventajas de usar frameworks
    - Creación rápida de layouts y componentes con Bootstrap/Tailwind
 
-2. **Introducción a React**  
+### 3. Introducción a React
    - Componentes, props, estado y ciclo de vida
    - Hooks y manejo de eventos
    - Creación de interfaces dinámicas y reactivas
+   - Integración con APIs externas
+   - Creación de Single Page Applications (SPA)
+   - React Router y manejo de rutas
+   - Store y manejo de estado global
+
+### 4. Astro
+   - Introducción a Astro
+   - Creación de componentes y layouts
+   - Integración con React y otros frameworks
+   - Optimización y rendimiento
+   - Despliegue y hosting
+  
+
