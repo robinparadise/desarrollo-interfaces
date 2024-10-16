@@ -1,0 +1,129 @@
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+  }
+  .flex {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  .min-h-60px {
+    min-height: 60px;
+  }
+  .p-10 {
+    padding: 10px;
+  }
+  .shadow-md {
+    box-shadow: 0 0 10px #00000061;
+  }
+  .transparent {
+    background: transparent;
+  }
+  .dialog-search {
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+  .close-btn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  dialog {
+    background-color: #ffffff;
+    border-radius: 4px;
+    box-shadow: 0 0 10px #00000061;
+    width: 400px;
+    padding: 20px;
+    position: relative;
+    text-align: center;
+  }
+
+  #search-results {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .disabled {
+    color: #ccc;
+    user-select: none;
+  }
+</style>
+
+<custom-search>
+  <div class="flex p-10 shadow-md min-h-60px">
+    <button class="dialog-search transparent">🔍 SEARCH</button>
+  </div>
+  <dialog open>
+    <button class="close-btn">🗙</button>
+    <h1>Search</h1>
+    <label for="site-search">Search the site:</label>
+    <input type="search" id="site-search" name="q"/>
+    <button class="search-btn">Search</button>
+
+    <ul id="search-results">
+      <li class="disabled">Type to search...</li>
+    </ul>
+
+  </dialog>
+</custom-search>
+
+<script>
+  const fruits = [
+    'Apple', 'Banana', 'Cherry', 'Date', 'Fig', 'Grape', 'Kiwi', 'Lemon', 'Mango', 'Orange', 'Papaya', 'Quince', 'Raspberry', 'Strawberry', 'Tomato', 'Ugli', 'Watermelon', 'Melon', 'Blackberry', 'Blueberry'
+  ];
+
+  class CustomSearch extends HTMLElement {
+    constructor() {
+      super();
+      this.fruits = fruits;
+    }
+
+    connectedCallback() {
+      const dialogBtn = this.querySelector('.dialog-search');
+      const closeBtn = this.querySelector('.close-btn');
+      const dialog = this.querySelector('dialog');
+
+      dialogBtn.addEventListener('click', () => {
+        dialog.showModal();
+      });
+      closeBtn.addEventListener('click', () => {
+        dialog.close();
+      });
+      const siteSearch = this.querySelector('#site-search');
+      siteSearch.addEventListener('input', (event) => this.search(event));
+    }
+
+    search(event) {
+      event.preventDefault();
+      const siteSearch = this.querySelector('#site-search');
+      const term = siteSearch.value
+      // console.log({term});
+      this.renderResults(term)
+    }
+
+    renderResults(term = '') {
+      // Implement your search logic here
+      const searchResults = this.querySelector('#search-results');
+      searchResults.innerHTML = '';
+      const aux = this.fruits
+      .map(fruit => fruit.toLowerCase())
+      .filter(fruit => fruit.includes(term))
+
+      console.log({aux})
+      // insertar los datos en el dom #searchResults
+      searchResults.innerHTML = `
+        ${aux.map(item => `<li>${item}</li>`).join('')}
+      `
+    }
+  }
+  customElements.define('custom-search', CustomSearch);
+</script>
