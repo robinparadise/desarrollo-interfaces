@@ -56,6 +56,30 @@
     color: #ccc;
     user-select: none;
   }
+
+  .card {
+    height: 100px;
+    position: relative;
+    box-shadow: 0 0 10px lightblue;
+    border-radius: 2%;
+    overflow: hidden;
+    padding: 20px 0;
+    img {
+      width: 80px;
+      object-fit: cover;
+    }
+    .flex-col {
+      flex-flow: column;
+    }
+    h5 {
+      margin: 0;
+      padding: 0;
+    }
+    p {
+      font-size: x-small;
+      color: gray;
+    }
+  }
 </style>
 
 <custom-search>
@@ -69,7 +93,17 @@
     <input type="search" id="site-search" name="q"/>
 
     <template>
-      <li>{value}</li>
+      <li>
+        <!-- CARD: -->
+          <!-- [img] [title] [description] -->
+        <div class="flex flex-col items-center card">
+          <img class="object-cover" src="https://flowbite.com/docs/images/blog/image-4.jpg">
+          <div class="flex flex-col justify-between">
+            <h5 class="item-value">{value}</h5>
+            <p>Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+          </div>
+        </div>
+      </li>
     </template>
 
     <ul id="search-results">
@@ -119,23 +153,14 @@
       const aux = this.fruits
       .filter(fruit => fruit.toLowerCase().includes(term.toLowerCase()))
 
-      // insertar los datos en el dom #searchResults
-      // searchResults.textContent = `${aux.map(item => `<li>${item}</li>`).join('')}`
-
-      // mode 1
-      // const li = document.createElement('li');
-      // li.textContent = 'Blueberry'
-      // searchResults.appendChild(li)
-
-      // mode 2
-      // searchResults.innerHTML = `${aux.map(item => `<li>${item}</li>`).join('')}`
-
       // mode 3 using <template>
       const template = this.querySelector('template').content;
       // loop
+      aux.map(fruit => {
         const li = template.querySelector('li').cloneNode(true);
-        li.textContent = 'Blueberry';
+        // TODO replace {value} -> fruta
         searchResults.appendChild(li);
+      })
     }
   }
   customElements.define('custom-search', CustomSearch);
