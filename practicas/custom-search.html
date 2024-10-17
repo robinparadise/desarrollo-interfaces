@@ -3,30 +3,37 @@
     font-family: Arial, sans-serif;
     margin: 0;
   }
+
   .flex {
     display: flex;
     justify-content: left;
     align-items: center;
     box-sizing: border-box;
   }
+
   .min-h-60px {
     min-height: 60px;
   }
+
   .p-10 {
     padding: 10px;
   }
+
   .shadow-md {
     box-shadow: 0 0 10px #00000061;
   }
+
   .transparent {
     background: transparent;
   }
+
   .dialog-search {
     border: none;
     cursor: pointer;
     padding: 10px 20px;
     font-size: 16px;
   }
+
   .close-btn {
     background-color: #f44336;
     color: white;
@@ -37,6 +44,7 @@
     right: 0;
     top: 0;
   }
+
   dialog {
     background-color: #ffffff;
     border-radius: 4px;
@@ -64,17 +72,21 @@
     border-radius: 2%;
     overflow: hidden;
     padding: 20px 0;
+
     img {
       width: 80px;
       object-fit: cover;
     }
+
     .flex-col {
       flex-flow: column;
     }
+
     h5 {
       margin: 0;
       padding: 0;
     }
+
     p {
       font-size: x-small;
       color: gray;
@@ -90,17 +102,18 @@
     <button class="close-btn">🗙</button>
     <h1>Search</h1>
     <label for="site-search">Search the site:</label>
-    <input type="search" id="site-search" name="q"/>
+    <input type="search" id="site-search" name="q" />
 
     <template>
       <li>
         <!-- CARD: -->
-          <!-- [img] [title] [description] -->
+        <!-- [img] [title] [description] -->
         <div class="flex flex-col items-center card">
           <img class="object-cover" src="https://flowbite.com/docs/images/blog/image-4.jpg">
           <div class="flex flex-col justify-between">
             <h5 class="item-value">{value}</h5>
-            <p>Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+            <p>Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
+            </p>
           </div>
         </div>
       </li>
@@ -113,14 +126,48 @@
 </custom-search>
 
 <script>
-  const fruits = [
-    'Apple', 'Banana', 'Cherry', 'Date', 'Fig', 'Grape', 'Kiwi', 'Lemon', 'Mango', 'Orange', 'Papaya', 'Quince', 'Raspberry', 'Strawberry', 'Tomato', 'Ugli', 'Watermelon', 'Melon', 'Blackberry', 'Blueberry'
-  ];
+  const articles = [
+    {
+      "image": "https://cdn.kqed.org/wp-content/uploads/sites/35/2024/10/GettyImages-1347890261-1020x680.jpg",
+      "title": "Climate Activists Push for Carbon Tax With Measure GG, But Critics Warn it Could Backfire",
+      "description": "Grassroots climate activists argue a tax on gas use in large buildings will help all of Berkeley kick fossil fuels. But many politicians, businesses, and nonprofits, even those that work on climate, don’t think Measure GG is the policy to get there.",
+      "date": "2024-10-17T11:00:16Z",
+      "category": "Climate"
+    },
+    {
+      "image": "https://fortune.com/img-assets/wp-content/uploads/2024/10/GettyImages-2170862982_413c33-e1729160290535.jpg?resize=1200,600",
+      "title": "Musk’s empire risks being targeted by EU for potential X fines",
+      "description": "The EU may target Elon Musk’s broader business empire for X fines, potentially including revenue from SpaceX and Neuralink to increase penalties.",
+      "date": "2024-10-17T10:32:45Z",
+      "category": "Business"
+    },
+    {
+      "image": "https://media.autoexpress.co.uk/image/private/s--X-WVjvBW--/f_auto,t_content-image-full-desktop@1/v1729160267/autoexpress/2024/10/Omode E5 first UK drive.jpg",
+      "title": "Omoda E5 in Noble trim - pictures",
+      "description": "Pictures of the electric Omode E5 SUV being driven on UK roads. Pictures taken by Auto Express senior photographer Pete Gibson",
+      "date": "2024-10-17T10:30:56Z",
+      "category": "Automobile"
+    },
+    {
+      "image": "https://cdn.mos.cms.futurecdn.net/6xqynicLzH6sSskfiNyWoT-1200-80.jpg",
+      "title": "Renault, Alpine and Citroën help the 2024 Paris Motor Show return to form",
+      "description": "Explore the most delectable debuts at the Paris Motor Show 2024 – or Mondial de l'Auto – including designs from France's big car makers and niche machines from around the world",
+      "date": "2024-10-17T10:25:24Z",
+      "category": "Automobile"
+    },
+    {
+      "image": "https://www.computerworld.com/wp-content/uploads/2024/10/3567767-0-90640600-1729160617-IDG-Germany-Intel-September-News.jpg?quality=50&strip=all&w=1024",
+      "title": "Chinese cybersecurity association urges review of Intel products",
+      "description": "The Cybersecurity Association of China (CSAC) has urged a security review of Intel products sold in the country, claiming the US semiconductor firm poses ongoing threats to China’s national security and interests.",
+      "date": "2024-10-17T10:22:56Z",
+      "category": "Technology"
+    }
+  ]
 
   class CustomSearch extends HTMLElement {
     constructor() {
       super();
-      this.fruits = fruits;
+      this.articles = fruits;
     }
 
     connectedCallback() {
@@ -151,7 +198,7 @@
       const searchResults = this.querySelector('#search-results');
       searchResults.innerHTML = '';
       const aux = this.fruits
-      .filter(fruit => fruit.toLowerCase().includes(term.toLowerCase()))
+        .filter(fruit => fruit.toLowerCase().includes(term.toLowerCase()))
 
       // mode 3 using <template>
       const template = this.querySelector('template').content;
