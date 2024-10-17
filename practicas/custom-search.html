@@ -67,12 +67,14 @@
     <h1>Search</h1>
     <label for="site-search">Search the site:</label>
     <input type="search" id="site-search" name="q"/>
-    <button class="search-btn">Search</button>
+
+    <template>
+      <li>{value}</li>
+    </template>
 
     <ul id="search-results">
       <li class="disabled">Type to search...</li>
     </ul>
-
   </dialog>
 </custom-search>
 
@@ -115,14 +117,25 @@
       const searchResults = this.querySelector('#search-results');
       searchResults.innerHTML = '';
       const aux = this.fruits
-      .map(fruit => fruit.toLowerCase())
-      .filter(fruit => fruit.includes(term))
+      .filter(fruit => fruit.toLowerCase().includes(term.toLowerCase()))
 
-      console.log({aux})
       // insertar los datos en el dom #searchResults
-      searchResults.innerHTML = `
-        ${aux.map(item => `<li>${item}</li>`).join('')}
-      `
+      // searchResults.textContent = `${aux.map(item => `<li>${item}</li>`).join('')}`
+
+      // mode 1
+      // const li = document.createElement('li');
+      // li.textContent = 'Blueberry'
+      // searchResults.appendChild(li)
+
+      // mode 2
+      // searchResults.innerHTML = `${aux.map(item => `<li>${item}</li>`).join('')}`
+
+      // mode 3 using <template>
+      const template = this.querySelector('template').content;
+      // loop
+        const li = template.querySelector('li').cloneNode(true);
+        li.textContent = 'Blueberry';
+        searchResults.appendChild(li);
     }
   }
   customElements.define('custom-search', CustomSearch);
