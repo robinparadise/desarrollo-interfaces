@@ -241,6 +241,8 @@
       });
       const siteSearch = this.querySelector('#site-search');
       siteSearch.addEventListener('input', (event) => this.search(event));
+
+      this.renderResults('')
     }
 
     search(event) {
