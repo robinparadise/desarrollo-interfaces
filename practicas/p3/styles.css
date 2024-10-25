@@ -181,10 +181,3 @@ main {
     width: 100%;
   }
 }
-
-.menu-toggle:focus-within ~ .menu-sidebar {
-  display: block;
-}
-.menu-sidebar:hover {
-  display: block;
-}
