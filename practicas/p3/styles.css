@@ -18,11 +18,63 @@ body {
   display: block;
 }
 
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+}
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 0 solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.text-left {
+  text-align: start;
+}
+
+.title {
+  font-family: serif;
+  font-size: 18px;
+  font-weight: bold;
+  a {
+    text-decoration: none;
+    color: black;
+  }
+}
+
+.description {
+  font-size: 14px;
+  color: gray
+}
+
+
 .flex {
   display: flex;
   justify-content: left;
   align-items: center;
   box-sizing: border-box;
+}
+
+.menu-sidebar {
+  display: none;
+  top: 60px;
+  max-width: 327px;
+  height: 100vh;
+  position: absolute;
+  background: white;
+  width: 100%;
+  box-shadow: 9px 10px 10px #00000033;
+  ul {
+    list-style: none;
+    font-size: 16px;
+    li {
+      font-size: 22px;
+      padding: 10px 0;
+    }
+  }
 }
 
 .min-h-60px {
@@ -125,4 +177,14 @@ dialog {
 main {
   width: min(768px, 100%);
   margin: auto;
+  img {
+    width: 100%;
+  }
+}
+
+.menu-toggle:focus-within ~ .menu-sidebar {
+  display: block;
+}
+.menu-sidebar:hover {
+  display: block;
 }

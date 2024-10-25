@@ -1,0 +1,74 @@
+<link rel="stylesheet" href="./styles.css"/>
+
+<custom-search>
+  <div class="flex p-10 shadow-md min-h-60px">
+    <button class="menu-toggle transparent">≡</button>
+    <aside class="menu-sidebar">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li>News</li>
+        <li>Technology</li>
+        <li><a href="sports.html">Sports</a></li>
+      </ul>
+    </aside>
+    <span class="logo">
+      <span class="logo-item">B</span>
+      <span class="logo-item">B</span>
+      <span class="logo-item">C</span>
+    </span>
+    <button class="dialog-search transparent">🔍</button>
+  </div>
+  <dialog>
+    <button class="close-btn">🗙</button>
+    <h1>Search</h1>
+    <input type="search" id="site-search" name="q" />
+
+    <template>
+      <li>
+        <div class="flex flex-col items-center card">
+          <img class="object-cover item-image" src="https://flowbite.com/docs/images/blog/image-4.jpg">
+          <div class="flex flex-col justify-between">
+            <h5 class="item-title">
+              <a href="article.html?id={id}">
+                {value}
+              </a>
+            </h5>
+            <p class="item-description">Here are the biggest enterprise technology acquisitions of 2021 so far, in
+              reverse chronological order.
+            </p>
+            <relative-time time="Wed Oct 16 2024 11:12:41 GMT+0200" />
+          </div>
+        </div>
+      </li>
+    </template>
+
+    <ul id="search-results">
+    </ul>
+  </dialog>
+</custom-search>
+
+<div class="grid-container">
+  <div class="grid-item text-left">
+    <img/>
+    <h1 class="title">
+      <a href="article.html?id=1">Climate Activists Push for Carbon Tax With Measure GG, But Critics Warn it Could Backfire</a>
+    </h1>
+    <p class="description">Lorem San Francisco Chiba Kowloon otaku silent fetishism monofilament girl marketing man courier denim hacker wristwatch rebar. Cartel range-rover meta-assault corrupted numinous tube augmented reality. 3D-printed boat sub-orbital wonton soup corporation bicycle franchise. Tower dolphin 8-bit drone physical order-flow garage girl denim crypto-savant vinyl. DIY wristwatch office physical dissident BASE jump computer. </p>
+  </div>
+  <div class="grid-item text-left">
+    <img/>
+    <h1 class="title">
+      <a href="article.html?id=2">Musk’s empire risks being targeted by EU for potential X fines</a>
+    </h1>
+    <p class="description">Lorem San Francisco Chiba Kowloon otaku silent fetishism monofilament girl marketing man courier denim hacker wristwatch rebar. Cartel range-rover meta-assault corrupted numinous tube augmented reality. 3D-printed boat sub-orbital wonton soup corporation bicycle franchise. Tower dolphin 8-bit drone physical order-flow garage girl denim crypto-savant vinyl. DIY wristwatch office physical dissident BASE jump computer.</p>
+  </div>
+  <div class="grid-item text-left">
+    <img/>
+    <h1 class="title">
+      <a href="article.html?id=3">Omoda E5 in Noble trim - pictures</a>
+    </h1>
+    <p class="description">Lorem San Francisco Chiba Kowloon otaku silent fetishism monofilament girl marketing man courier denim hacker wristwatch rebar. Cartel range-rover meta-assault corrupted numinous tube augmented reality. 3D-printed boat sub-orbital wonton soup corporation bicycle franchise. Tower dolphin 8-bit drone physical order-flow garage girl denim crypto-savant vinyl. DIY wristwatch office physical dissident BASE jump computer.</p>
+  </div>
+</div>
+
+<script src="main.js"></script>

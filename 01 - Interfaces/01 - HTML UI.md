@@ -139,9 +139,12 @@ El atributo `popovertarget` se puede usar para especificar un selector de destin
 
 ```html
 <button id="anchor_1" popovertarget="popover_1">Open popover</button>
-<p id="popover_1" popover>
-  I am the popover!
-</p>
+<ul id="popover_1" popover>
+  <li><a href="#">Item 0</a></li>
+  <li><a href="#">Item 1</a></li>
+  <li><a href="#">Item 2</a></li>
+  <li><a href="#">Item 3</a></li>
+</ul>
 ```
 ```css
 [popover] {
@@ -183,8 +186,8 @@ El atributo `popovertarget` se puede usar para especificar un selector de destin
     position: absolute;
     width: 10rem;
     position-anchor: --anchor_1;
-    top: anchor(--anchor_1 bottom); 
-    left: anchor(--anchor_1 left); 
+    top: anchor(--anchor_1 top); 
+    left: anchor(--anchor_1 right); 
   /*  inset-block-start: anchor(--anchor_1 bottom);*/
   /*  inset-inline-start: anchor(--anchor_1 right);*/
   }
