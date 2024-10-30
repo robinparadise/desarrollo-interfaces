@@ -1,6 +1,6 @@
 # HTML Elements
 
-## \<dialog\>
+## 1.1 \<dialog\>
 
 El elemento `<dialog>` representa una ventana de diálogo o cuadro de diálogo. Es un contenedor que se puede mostrar u ocultar mediante JavaScript.
 
@@ -23,7 +23,7 @@ El elemento `<dialog>` representa una ventana de diálogo o cuadro de diálogo. 
   Show the dialog
 </button>
 
-## \<details\>
+## 1.2 \<details\>
 
 El elemento `<details>` representa un widget de control de divulgación desde el que el usuario puede obtener información adicional o controles interactivos.
 
@@ -85,7 +85,7 @@ El elemento `<details>` representa un widget de control de divulgación desde el
   Something small enough to escape casual notice.
 </details>
 
-## \<menu\>
+## 1.3 \<menu\>
 
 El elemento `<menu>` representa un grupo de comandos que un usuario puede invocar o activar. Este elemento se puede usar para crear menús contextuales y menús de herramientas.
 
@@ -121,7 +121,7 @@ El elemento `<menu>` representa un grupo de comandos que un usuario puede invoca
   <button>Close</button>
 </menu>
 
-## Popover
+## 1.4 Popover
 
 El elemento `<popover>` representa un cuadro de diálogo emergente que se muestra al hacer clic en un elemento.
 
