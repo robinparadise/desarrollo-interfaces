@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visor de Noticias Falsas</title>
+</head>
+<body>
+
+  <h1>Artículos de Noticias Falsas</h1>
+  <!-- Componente personalizado -->
+  <news-viewer></news-viewer>
+
+  <!-- Plantilla para un artículo -->
+  <template id="article-template">
+    <div class="article">
+      <h3 class="title"></h3>
+      <p><strong>Autor:</strong> <span class="author"></span></p>
+      <p class="description"></p>
+      <hr>
+    </div>
+  </template>
+
+  <script src="news-viewer.js"></script>
+
+</body>
+</html>
