@@ -134,6 +134,12 @@ class RelativeTime extends HTMLElement {
     this.render();
     setInterval(() => this.render(), 1000);
   }
+  static get observedAttributes() {
+    return ['time'];
+  }
+  attributeChangedCallback(name, oldValue, newValue) {
+    this.render();
+  }
   render() {
     const timeValue = this.getAttribute('time')
     const time = timeValue ? new Date(Number(timeValue)).getTime() : Date.now();
