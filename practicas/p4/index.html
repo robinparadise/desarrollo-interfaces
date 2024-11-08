@@ -4,6 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Visor de Noticias Falsas</title>
+
+  <style>
+    .description {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;  
+      overflow: hidden;
+    }
+  </style>
 </head>
 <body>
 
@@ -14,7 +23,7 @@
   <!-- Plantilla para un artículo -->
   <template id="article-template">
     <div class="article">
-      <h3 class="title"></h3>
+      <a class="link" href="#"><h3 class="title"></h3></a>
       <p><strong>Autor:</strong> <span class="author"></span></p>
       <p class="description"></p>
       <hr>

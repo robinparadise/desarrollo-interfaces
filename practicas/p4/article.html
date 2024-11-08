@@ -1,0 +1,47 @@
+<custom-article class="article">
+  <h3 class="title">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit
+  </h3>
+  <p><strong>Autor:</strong> <span class="author">Anonymous</span></p>
+  <p class="description">Office woman stimulate corporation military-grade refrigerator systemic rifle otaku. Tanto sub-orbital kanji human office drugs lights garage voodoo god fetishism sunglasses sentient marketing urban. Chiba human jeans bridge footage neon industrial grade market numinous fluidity man urban.</p>
+  <hr>
+</custom-article>
+
+<script>
+  const getId = () => {
+    const searchParams = new URLSearchParams(location.search.slice(1));
+    return Number(searchParams.get('id'));
+  }
+  class CustomArticle extends HTMLElement {
+    constructor() {
+      super()
+      this.id = getId()
+      console.log({ id: this.id })
+    }
+
+    connectedCallback() {
+      this.render()
+    }
+
+    async loadArticles() {
+      return fetch('https://news-foniuhqsba-uc.a.run.app').then(res => res.json())
+    }
+
+    async render() {
+      // 1. API get All Articles
+      const articles = await this.loadArticles()
+      console.log({ articles })
+      // 2. filter the 'article' by the id `this.id`
+      const article = articles.find(article => article.id == this.id)
+      console.log({ article })
+      // 3. remplace the html with the article data
+      // Rellenar la plantilla con los datos del artículo
+      this.querySelector('.title').textContent = article.headline;
+      this.querySelector('.author').textContent = article.author;
+      this.querySelector('.description').innerHTML = article.body;
+      console.log('OK')
+    }
+  }
+
+  customElements.define('custom-article', CustomArticle);
+</script>

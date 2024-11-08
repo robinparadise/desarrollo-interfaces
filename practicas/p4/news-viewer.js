@@ -35,6 +35,8 @@ class NewsViewer extends HTMLElement {
       
       // Rellenar la plantilla con los datos del artículo
       articleContent.querySelector('.title').textContent = article.headline;
+      articleContent.querySelector('.link').href = `./article.html?id=${article.id}`;
+
       articleContent.querySelector('.author').textContent = article.author;
       articleContent.querySelector('.description').innerHTML = article.body;
       
