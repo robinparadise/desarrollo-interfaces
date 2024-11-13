@@ -8,7 +8,6 @@ Aprender a configurar una página web en GitHub Pages alojada en la raíz de tu 
 1. **Crear un repositorio en GitHub:**
    - Ingresa a tu cuenta de GitHub.
    - Crea un nuevo repositorio con el nombre **`TU_USUARIO.github.io`**, donde `TU_USUARIO` es tu nombre de usuario en GitHub. Este nombre es importante, ya que GitHub Pages utiliza este formato para la URL de la página.
-   - Marca la opción **"Initialize this repository with a README"**.
 
 2. **Clonar el repositorio en tu máquina local:**
    - Abre tu terminal o línea de comandos.
