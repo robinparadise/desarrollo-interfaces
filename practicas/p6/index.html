@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Tv tops</title>
+  <title>👾 Game Store</title>
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Configuración de Tailwind CSS -->
@@ -22,12 +22,11 @@
     }
   </script>
   <style>
-    [anchor] {
-      anchor-name: auto;
+    anchor {
+      anchor-name: --anchor-1;
     }
-    [target] {
-      position: absolute;
-      position-anchor: auto;
+    target {
+      position-anchor: --anchor-1;
       position-area: span-top right;
       margin: 0;
     }
@@ -40,11 +39,10 @@
   <!-- Encabezado -->
   <header class="bg-white shadow">
     <div class="container mx-auto px-6 py-4 flex items-center justify-between">
-      <div class="text-2xl font-bold text-gray-800">MiLogo</div>
+      <div class="text-2xl font-bold text-gray-800">Game<b>Store</b></div>
       <nav class="space-x-4">
         <a href="#" class="text-gray-800 hover:text-primary">Inicio</a>
-        <a href="#" class="text-gray-800 hover:text-primary">Características</a>
-        <a href="#" class="text-gray-800 hover:text-primary">Contacto</a>
+        <a href="#" class="text-gray-800 hover:text-primary">Carrito</a>
       </nav>
     </div>
   </header>
@@ -52,78 +50,55 @@
   <!-- Sección de Héroe -->
   <section class="bg-secondary">
     <div class="container mx-auto px-6 py-16 text-center">
-      <h1 class="text-4xl font-bold text-gray-800 mb-4">Bienvenido a Nuestra Landing Page</h1>
-      <p class="text-gray-700 mb-8">Ofrecemos las mejores soluciones para tu negocio.</p>
-      <a href="#" class="bg-primary text-white px-6 py-3 rounded-full hover:bg-blue-800">Comenzar</a>
+      <h1 class="text-4xl font-bold text-gray-800 mb-4">Bienvenido a la store de videojuegos</h1>
+      <a href="#" class="bg-primary text-white px-6 py-3 rounded-full hover:bg-blue-800">Ver juegos</a>
     </div>
   </section>
 
   <!-- Sección de Grid de Imágenes -->
   <section class="container mx-auto px-6 py-16">
     <div class="text-center mb-12">
-      <h2 class="text-3xl font-bold text-gray-800">Products</h2>
-      <p class="text-gray-600 mt-4">lista de productos</p>
+      <h2 class="text-3xl font-bold text-gray-800">Galería de Imágenes</h2>
+      <p class="text-gray-600 mt-4">Una muestra de nuestro trabajo.</p>
     </div>
-    <template id="card-template">
+    <template id="product-item">
       <div class="max-w-sm rounded overflow-hidden shadow-lg">
-        <img class="w-full" src="" alt="">
+        <img class="w-full" src="/img/card-top.jpg" alt="Sunset in the mountains">
         <div class="px-6 py-4">
-          <div class="font-bold text-xl mb-2"></div>
-          <p class="text-gray-700 text-base"></p>
+          <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
+          <p class="text-gray-700 text-base">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
+          </p>
         </div>
         <div class="px-6 pt-4 pb-2">
-          <!-- tags -->
+          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
+          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
+          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
         </div>
-        <!-- button for popup info -->
+        <!-- Button more info -->
         <div class="px-6 pt-4 pb-2">
-          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" anchor popovertarget="target">
-            Info
-          <div id="target" popover target>
-            <!-- card for more info -->
-            <div class="max-w-sm rounded overflow-hidden shadow-lg">
-              <img class="w-full" src="" alt="">
-              <div class="px-6 py-4">
-                <div class="font-bold text-xl mb-2">more</div>
-                <p class="text-gray-700 text-base">...</p>
-              </div>
-              <div class="px-6 pt-4 pb-2">
-                more info
-              </div>
-            </div>
+          <button anchor class="bg-primary text-white px-6 py-3 hover:bg-blue-800">Ver más</button>
+          <div target popover class="absolute bg-white border border-gray-200 rounded-lg shadow-lg p-4">
+            <p class="text-gray-800">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.</p>
           </div>
-          </button>
+          <button
+            class="add2cart bg-primary text-white px-6 py-3 hover:bg-blue-800">Add to Cart</button>
         </div>
       </div>
     </template>
+
+    <div class="container mx-auto px-6 py-16">
+      <h2 class="text-3xl">
+        Cart
+      </h2>
+      <custom-cart/>
+    </div>
+
     <products-items class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-      <!-- Imagen 1 -->
-      <div class="overflow-hidden rounded-lg">
-        <img src="https://placehold.co/600x400/EEE/31343C" alt="Descripción de la imagen 1" class="w-full h-full object-cover">
-      </div>
-      <!-- Imagen 2 -->
-      <div class="overflow-hidden rounded-lg">
-        <img src="https://placehold.co/600x400/EEE/31343C" alt="Descripción de la imagen 2" class="w-full h-full object-cover">
-      </div>
-      <!-- Imagen 3 -->
-      <div class="overflow-hidden rounded-lg">
-        <img src="https://placehold.co/600x400/EEE/31343C" alt="Descripción de la imagen 3" class="w-full h-full object-cover">
-      </div>
-      <!-- Imagen 4 -->
-      <div class="overflow-hidden rounded-lg">
-        <img src="https://placehold.co/600x400/EEE/31343C" alt="Descripción de la imagen 4" class="w-full h-full object-cover">
-      </div>
-      <!-- Puedes añadir más imágenes según sea necesario -->
+      <!-- Aquí Grid items -->
     </products-items>
   </section>
 
-  <!-- Llamado a la Acción -->
-  <section class="bg-primary">
-    <div class="container mx-auto px-6 py-16 text-center text-white">
-      <h2 class="text-3xl font-bold mb-4">¿Listo para comprar?</h2>
-      <p class="mb-8">Únete a nosotros y lleva tu negocio al siguiente nivel.</p>
-      <a href="#" class="bg-secondary text-primary px-6 py-3 rounded-full hover:bg-yellow-300">Compra</a>
-    </div>
-  </section>
 
   <!-- Pie de Página -->
   <footer class="bg-gray-800">
@@ -138,6 +113,6 @@
       </div>
     </div>
   </footer>
-  <script src="main.js"></script>
+  <script src="store-game.js"></script>
 </body>
 </html>

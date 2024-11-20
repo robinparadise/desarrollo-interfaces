@@ -1,4 +1,5 @@
 // news-viewer.js
+
 class NewsViewer extends HTMLElement {
   constructor() {
     super();
@@ -10,7 +11,7 @@ class NewsViewer extends HTMLElement {
 
   async loadArticles() {
     try {
-      const response = await fetch(`https://news-foniuhqsba-uc.a.run.app`);
+      const response = await fetch('https://fakenews.squirro.com/news/sports');
       if (!response.ok) {
         throw new Error('Error al obtener los artículos');
       }
@@ -33,11 +34,9 @@ class NewsViewer extends HTMLElement {
       const articleContent = document.importNode(template.content, true);
       
       // Rellenar la plantilla con los datos del artículo
-      articleContent.querySelector('.title').textContent = article.headline;
-      articleContent.querySelector('.link').href = `./article.html?id=${article.id}`;
-
+      articleContent.querySelector('.title').textContent = article.title;
       articleContent.querySelector('.author').textContent = article.author;
-      articleContent.querySelector('.description').innerHTML = article.body;
+      articleContent.querySelector('.description').textContent = article.description;
       
       // Añadir el artículo al componente
       this.appendChild(articleContent);
