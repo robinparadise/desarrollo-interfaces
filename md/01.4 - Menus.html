@@ -1427,7 +1427,26 @@ code.hljs {
 </ul>
 </li>
 </ul>
-<h3>5. Resumen y Beneficios del Popover</h3>
+<h3>4.2 Anchor position-area</h3>
+<p><img src="../assets/anchors/anchoring-positioning.webp" alt="Position area"></p>
+<pre><code class="hljs language-html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;anchor_area&quot;</span> <span class="hljs-attr">popovertarget</span>=<span class="hljs-string">&quot;popover-area&quot;</span>&gt;</span>Abrir popover con anchor<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;popover-area&quot;</span> <span class="hljs-attr">popover</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#&quot;</span>&gt;</span>Opción 1<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#&quot;</span>&gt;</span>Opción 2<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#&quot;</span>&gt;</span>Opción 3<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="language-css">
+  <span class="hljs-selector-id">#anchor_area</span> {
+    anchor-name: --anchor_area;
+  }
+  <span class="hljs-selector-attr">[popover]</span> {
+    <span class="hljs-attribute">position</span>: absolute;
+    <span class="hljs-attribute">position</span>-anchor: --anchor_area;
+    <span class="hljs-attribute">position</span>-area: span-top right;
+  }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+</code></pre><h3>5. Resumen y Beneficios del Popover</h3>
 <p>El atributo <code>popovertarget</code> permite crear menús interactivos de una manera estándar y accesible, sin la necesidad de bibliotecas externas. La API de JavaScript proporciona un control detallado sobre cómo y cuándo se muestran estos elementos, mejorando la experiencia del usuario.</p>
 <p><strong>Beneficios</strong>:</p>
 <ul>
@@ -1435,7 +1454,17 @@ code.hljs {
 <li><strong>Accesibilidad</strong>: Mejoran la accesibilidad gracias a su semántica estándar para navegadores y lectores de pantalla.</li>
 <li><strong>Flexibilidad</strong>: Se pueden personalizar con CSS para adaptarse al diseño de la página.</li>
 </ul>
-
+<h3>6. Anchors y el soporte en firefox 🦊:</h3>
+<p>Por el momento los anchors no son soportados en Firefox, por lo que es importante tener en cuenta este detalle. Pero se puede usar un Polyfill para solucionar este problema.</p>
+<ul>
+<li><strong>document <code>&lt;head&gt;</code></strong>:</li>
+</ul>
+<pre><code class="hljs language-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;module&quot;</span>&gt;</span><span class="language-javascript">
+  <span class="hljs-keyword">if</span> (!(<span class="hljs-string">&quot;anchorName&quot;</span> <span class="hljs-keyword">in</span> <span class="hljs-variable language_">document</span>.<span class="hljs-property">documentElement</span>.<span class="hljs-property">style</span>)) {
+    <span class="hljs-keyword">import</span>(<span class="hljs-string">&quot;https://unpkg.com/@oddbird/css-anchor-positioning&quot;</span>);
+  }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
     <script src="https://unpkg.com/@highlightjs/cdn-assets@11.7.0/languages/css.min.js"></script>
   </body>
   </html>

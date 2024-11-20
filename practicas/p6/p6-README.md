@@ -12,6 +12,21 @@ Este es el endpoint de la API a utilizar [https://products-foniuhqsba-uc.a.run.a
 - Games: [Games](https://products-foniuhqsba-uc.a.run.app/Games)
 - TVs: [TVs](https://products-foniuhqsba-uc.a.run.app/TVs)
 
+Este es la categoría que le toca a cada usuario:
+- **PCs**: @alexparre, @luisgonzh94, @jesus-cobo-git
+
+- **Smartwatches and gadgets**: @jusch98, @marco-polo-coding, @rubengg33
+
+- **Drones**: @haricarbajal,@alvarorodriguezzz, @YinaryHdz         
+
+- **Cameras**: @LuisGSanchez21, @diegorold, @Edo0609 
+
+- **Games**: @estdc, @Ayoub2005ben, @KenCastillo001    
+
+- **TVs**: @Dani18122005, @sergiohurtadopozo, @luiszq, @client32
+y resto de usuarios
+
+
 El objetivo es crear una experiencia de usuario atractiva y funcional que integre los conceptos y tecnologías vistos en clase.
 
 **⚙️ Tecnologías y conceptos que debes utilizar:**
