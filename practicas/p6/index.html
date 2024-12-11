@@ -22,12 +22,17 @@
     }
   </script>
   <style>
-    anchor {
-      anchor-name: --anchor-1;
+    #anchor:focus-within {
+      anchor-name: --anchor;
     }
-    target {
-      position-anchor: --anchor-1;
-      position-area: span-top right;
+    #anchor:focus-within + [target] {
+      position-anchor: --anchor;
+      position-area: top span-right;
+      position-try-fallbacks: flip-block, flip-inline;
+      position-try: flip-block, flip-inline;
+    }
+    [target] {
+      width: min(80vw, 320px);
       margin: 0;
     }
   </style>
@@ -77,8 +82,8 @@
         </div>
         <!-- Button more info -->
         <div class="px-6 pt-4 pb-2">
-          <button anchor class="bg-primary text-white px-6 py-3 hover:bg-blue-800">Ver más</button>
-          <div target popover class="absolute bg-white border border-gray-200 rounded-lg shadow-lg p-4">
+          <button id="anchor" anchor popovertarget="target" class="bg-primary text-white px-6 py-3 hover:bg-blue-800">Ver más</button>
+          <div id="target" target anchor="button" popover class="absolute bg-white border border-gray-200 rounded-lg shadow-lg p-4">
             <p class="text-gray-800">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.</p>
           </div>
           <button

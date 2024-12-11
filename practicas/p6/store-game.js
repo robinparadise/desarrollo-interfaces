@@ -21,6 +21,8 @@ class ProductsItems extends HTMLElement {
 
       const img = card.querySelector('img')
       img.src = product.image
+      card.querySelector('[anchor]').setAttribute('popovertarget', `target-${product.id}`)
+      card.querySelector('[target]').id = `target-${product.id}`
 
       const add2Cart = card.querySelector('.add2cart')
       add2Cart.addEventListener('click', () => {
