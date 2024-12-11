@@ -466,3 +466,41 @@ export default App;
 
 ---
 
+### **Resumen**
+
+- Los **componentes funcionales** son la forma moderna y recomendada de crear componentes en React.
+- Los componentes funcionales son simplemente funciones de JavaScript que retornan elementos JSX.
+- Las **props** permiten pasar datos de un componente padre a un componente hijo.
+
+```jsx
+function Saludo({ nombre }) {
+  return <h1>¡Hola, {nombre}!</h1>;
+}
+```
+
+- La **composición** es una técnica para construir componentes complejos a partir de componentes más simples.
+
+```jsx
+function TarjetaPerfil({ usuario }) {
+  return (
+    <div>
+      <Avatar urlImagen={usuario.imagen} alt={usuario.nombre} />
+      <InformacionUsuario nombre={usuario.nombre} bio={usuario.bio} />
+    </div>
+  );
+}
+```
+
+- **`props.children`** es una propiedad especial que representa los elementos hijos que se pasan a un componente.
+
+```jsx
+function Cuadro({ titulo, children }) {
+  return (
+    <div className="cuadro">
+      <h2>{titulo}</h2>
+      <div>{children}</div>
+    </div>
+  );
+}
+```
+---
