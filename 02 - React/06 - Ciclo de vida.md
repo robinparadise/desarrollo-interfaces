@@ -237,10 +237,22 @@ Crea un componente `Buscador` que:
 ```jsx
 import { useState, useEffect } from 'react';
 
+const products = [
+  'Apple',
+  'Banana',
+  'Cherry',
+  'Date',
+  'Elderberry',
+  'Fig',
+  'Grape',
+  'Honey'
+]
+
 function Buscador() {
   const [termino, setTermino] = useState('');
   const [resultado, setResultado] = useState(null);
   const [cargando, setCargando] = useState(false);
+  const [items, setItems] = useState([])
 
   useEffect(() => {
     if (termino === '') {
@@ -248,14 +260,8 @@ function Buscador() {
       return;
     }
 
-    setCargando(true);
-    const timer = setTimeout(() => {
-      // Simulación de búsqueda
-      setResultado(`Resultados para "${termino}"`);
-      setCargando(false);
-    }, 1000);
-
-    return () => clearTimeout(timer);
+    setResultado(`Resultados para "${termino}"`);
+    setItems(products.filter(product => product.toLowerCase().includes(termino)))
   }, [termino]);
 
   return (
@@ -268,11 +274,17 @@ function Buscador() {
       />
       {cargando && <p>Cargando...</p>}
       {resultado && <p>{resultado}</p>}
+      <ul>
+        {items.map(item => (
+          <li><a href="#">{item}</a></li>
+        ))}
+      </ul>
     </div>
   );
 }
 
 export default Buscador;
+
 ```
 
 - Cuando el usuario escribe en el input, se actualiza `termino`.
