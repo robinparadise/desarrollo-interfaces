@@ -41,6 +41,28 @@ La página debe cumplir con los siguientes requisitos:
     export default function Article() {
       const { id } = useParams();
   ```
+
+  - Ten encuenta la categoría del artículo para mostrar los articulos relacionados.
+  
+
+  ```jsx
+  <BrowserRouter>
+    <Routes>
+      {/* Rutas Públicas */}
+      <Route path="/" element={<Home />} />
+      <Route path="/news/:id" element={<Article />} />
+      <Route path="/:category" element={<Category />} />
+  ```
+  - Usa el hook `useParams` para obtener la categoría del artículo.
+
+  ```jsx
+    import { useParams } from 'react-router-dom';
+
+    export default function Category() {
+      const { category } = useParams();
+  ```
+
+
 ---
 4. **Buscador** Crea un dialog para el buscador de la página.
 ---
