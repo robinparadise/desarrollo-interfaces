@@ -31,10 +31,10 @@ export default function Navbar() {
         Article 1
       </NavLink>
       <NavLink 
-        to="/news/2" 
+        to="/bookmarks" 
         className={({ isActive }) => isActive ? 'link-activo' : ''}
       >
-        Article 2
+        Bookmarks
       </NavLink>
       <LanguageSelector/>
 

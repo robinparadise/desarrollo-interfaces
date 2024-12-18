@@ -111,6 +111,7 @@ La página debe cumplir con los siguientes requisitos:
               }
           }
       },
+  ]
   ```
 
   Puedes usar el `navigator` para obtener el idioma del navegador.
@@ -120,4 +121,36 @@ La página debe cumplir con los siguientes requisitos:
   // "es-ES", "en-US", "fr-FR", "pt-PT", "it-IT", "zh-CN"
   // usarlo para onbtener el idioma del artículo
   ```
+
+  - debes de usar el `useContext` para propagar el estado del `language`.
+
+  ```jsx
+  // LangProvider.jsx
+  export const LangContext = createContext(null);
+
+  export function LangProvider({ children }) {
+    const [language, setLanguage] = useState('en');
+
+    const changeLanguage = (newLanguage) => {
+      setLanguage(newLanguage);
+    };
+
+    return (
+      <LangContext.Provider value={{ language, changeLanguage }}>
+        {children}
+      </LangContext.Provider>
+    );
+  }
+  ```
 ---
+
+6. Implementa ruta protegidas y el uso de `useContext` para implementar una de estas funcionalidades (po ejemplo):
+
+  - **Bookmarks**: Crea una ruta protegida para mostrar los artículos guardados por el usuario.
+  - **Subscriptions**: Crea una ruta protegida para mostrar solo los artículos a los que el usuario están suscrito en la app.
+  - **Autenticación**: Implementa un formulario de autenticación para el login y registro de usuarios, solo los usuarios registrados pueden leer el articulo completo.
+
+  **[Obligatorio]**:
+  - **Perfil**: Crea una ruta protegida para mostrar una ruta en la que se muestre el perfil del usuario con la información `booksmarks`, `Autenticación` o `suscripciones`.
+  
+  ```jsx

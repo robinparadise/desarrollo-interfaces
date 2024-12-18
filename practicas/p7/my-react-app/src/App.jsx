@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { RutaProtegida } from './RutaProtegida';
 import Home from './Home';
@@ -11,9 +11,11 @@ import Navbar from './Navbar';
 import { AuthProvider } from './AuthProvider';
 import { TemaProvider } from './TemaProvider'
 import { LangProvider } from './LangProvider';
+import Bookmarks from './Bookmarks';
+import { Link } from 'react-router-dom';
+import { BookmarksCheck } from './BookmarksCheck';
 
 function App() {
-  const [tema, setTema] = React.useState('light');
 
   return (
     <TemaProvider>
@@ -34,6 +36,21 @@ function App() {
               <Route element={<RutaProtegida />}>
                 <Route path="/dashboard" element={<Dashboard />} />
               </Route>
+
+              {/* Bookmarks */}
+              {<Route element={<BookmarksCheck />}>
+                <Route path="/bookmarks" element={<Bookmarks />} />
+              </Route>}
+
+              {/*{bookmarks.length ?
+                <Route path="/bookmarks" element={<Bookmarks />} /> :
+                <Route path="/bookmarks" element={
+                  <>
+                    <div>No hay bookmarks</div>
+                    <Link to="/login">Ir al login</Link>
+                  </>
+                } />
+              }*/}
 
               {/* Ruta por defecto (404) */}
               <Route path="*" element={<div>Página no encontrada</div>} />
