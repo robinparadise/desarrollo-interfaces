@@ -67,38 +67,26 @@
 - Instalación y configuración básica
 - Principios de diseño de Zustand
 
-**Clase 12: Uso de Zustand en Aplicaciones React**
-- Creación de stores con Zustand
-- Acceso y modificación del estado global
-- Implementación de acciones y lógica de negocios
-- Uso de middleware y persistencia del estado
-- Comparación práctica con Context API
-
-**Clase 13: Fetching de Datos**
+**Clase 12: Fetching de Datos**
 - Uso de `fetch` y `axios` para llamadas HTTP
 - Manejo de promesas y datos asincrónicos
 - Integración de datos externos en componentes
 - Renderizado condicional basado en el estado de los datos
 
-**Clase 14: Manejo de Errores y Estados de Carga**
-- Implementación de indicadores de carga (`loading spinners`)
-- Gestión de errores en solicitudes HTTP
-- Retries y manejo de fallos
-
-**Clase 15: CSS en React**
+**Clase 13: CSS en React**
 - Estilos en línea vs archivos CSS
 - Módulos de CSS (`CSS Modules`)
 - Styled Components y CSS-in-JS (opcional)
 - Introducción a Tailwind CSS con React
 - Responsividad y diseño adaptativo
 
-**Clase 16: Deploy de Aplicaciones React**
+**Clase 14: Deploy de Aplicaciones React**
 - Preparación para producción (`build`, minificación)
 - Deploy en plataformas como Firebase, Netlify, Vercel o GitHub Pages
 - Configuración de rutas y `404` en Single Page Applications
 - Buenas prácticas y optimización de performance
 
-**Clases 17: Desarrollo de un Proyecto Completo**
+**Clases 15: Desarrollo de un Proyecto Completo**
 - TODO 🌚
 
 ---
