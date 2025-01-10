@@ -158,6 +158,7 @@ La página debe cumplir con los siguientes requisitos:
 
 7. [opcional] Despliega tu proyecto a github pages:
 
-- [react to github pages](https://github.com/marketplace/actions/build-and-deploy-react-app-to-github-pages)
-- [nodejs to github pages](https://github.com/robinparadise/desarrollo-interfaces/new/main?filename=.github%2Fworkflows%2Fnode.js.yml&workflow_template=ci%2Fnode.js)
+- [React to github pages](https://github.com/marketplace/actions/build-and-deploy-react-app-to-github-pages)
+
+- [Nodejs to github pages](https://github.com/robinparadise/desarrollo-interfaces/new/main?filename=.github%2Fworkflows%2Fnode.js.yml&workflow_template=ci%2Fnode.js)
 
