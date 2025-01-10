@@ -153,7 +153,7 @@ La página debe cumplir con los siguientes requisitos:
   **[Obligatorio]**:
   - **Perfil**: Crea una ruta protegida para mostrar una ruta en la que se muestre el perfil del usuario con la información `booksmarks`, `Autenticación` o `suscripciones`.
   
-  ```jsx
+
 
 
 7. [opcional] Despliega tu proyecto a github pages:
