@@ -154,3 +154,10 @@ La página debe cumplir con los siguientes requisitos:
   - **Perfil**: Crea una ruta protegida para mostrar una ruta en la que se muestre el perfil del usuario con la información `booksmarks`, `Autenticación` o `suscripciones`.
   
   ```jsx
+
+
+7. [opcional] Despliega tu proyecto a github pages:
+
+- https://github.com/marketplace/actions/build-and-deploy-react-app-to-github-pages
+- https://github.com/robinparadise/desarrollo-interfaces/new/main?filename=.github%2Fworkflows%2Fnode.js.yml&workflow_template=ci%2Fnode.js
+
