@@ -1,0 +1,21 @@
+---
+import Article from '../../components/Article.astro'
+import Layout from '../../layouts/Layout.astro'
+import { getPosts } from '../../lib/articles';
+
+export async function getStaticPaths() {
+  const posts = await getPosts()
+  return posts.map(item => {
+    return { params: item }
+  })
+}
+
+const { slug } = Astro.params;
+const posts = await getPosts()
+
+const article = posts.find(item => item.slug === slug)
+---
+
+<Layout>
+  <Article {...article}/>
+</Layout>

@@ -1,0 +1,14 @@
+---
+// props
+const props = Astro.props
+---
+
+<div class="mx-auto max-w-4xl py-12 px-6 lg:px-8">
+  <article class="prose lg:prose-xl">
+    <h1>{props.title}</h1>
+    <img src={props.image}/>
+    <p class="whitespace-pre-line">
+      {props.description}
+    </p>
+  </article>
+</div>
