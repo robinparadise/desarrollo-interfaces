@@ -40,6 +40,7 @@ En tu terminal, ve a la carpeta raíz del proyecto que desees desplegar. Por eje
 
 ```bash
 cd ~/mis-proyectos/mi-app
+firebase experiments:enable webframeworks
 ```
 
 ---
