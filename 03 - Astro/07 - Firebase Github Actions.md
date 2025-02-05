@@ -1,4 +1,4 @@
-# firebase hosting and github action
+# Firebase hosting and github action
 
 # gitignore
 
