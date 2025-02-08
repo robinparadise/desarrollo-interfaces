@@ -12,7 +12,7 @@ Categorías:
 [
   "Ficción", "No ficción", "Cómics y novelas gráficas", "Libros infantiles", "Autoayuda y desarrollo personal", "Gastronomía y recetas", "Ciencia ficción", "Misterio y suspense", "Biografías", "Historia", "Filosofía", "Psicología", "Terror", "Poesía", "Drama", "Crimen", "Viajes", "Arte", "Cultura", "Educación", "Religión", "Tecnología", "Economía", "Política", "Deportes", "Música", "Superación personal", "Sociología"
 ]
-``
+```
 
 ---
 
