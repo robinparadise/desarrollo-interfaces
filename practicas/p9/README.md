@@ -182,4 +182,4 @@ Como parte de la ampliación de esta práctica, la plataforma debe ser accesible
 - Implementar un **selector de idioma** en la interfaz que permita cambiar entre idiomas.
 - Puedes utilizar una biblioteca de astro o manejar la traducción de los textos mediante archivos JSON.
 - Guardar la selección del idioma en el **localStorage** para mantener la preferencia del usuario.
-- Asegurar que los títulos, descripciones y textos dinámicos de la plataforma se adapten al idioma seleccionado.
+- Asegurar que los títulos, descripciones y textos principales de la plataforma se adapten al idioma seleccionado, no es necesario tenerlo al 100% traducido 👍.
