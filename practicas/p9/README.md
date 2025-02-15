@@ -168,16 +168,16 @@ Para tu **listado inicial**, puedes cargar en Firebase (manualmente o con un scr
 
 ---
 
-### **8. Soporte para Múltiples Monedas e Internacionalización (i18n)**
+## **8. Soporte para Múltiples Monedas e Internacionalización (i18n)**
 Como parte de la ampliación de esta práctica, la plataforma debe ser accesible para usuarios de diferentes regiones, permitiendo cambiar el idioma y la moneda en los precios.
 
-#### **8.1 Soporte para Múltiples Monedas**
+### **8.1 Soporte para Múltiples Monedas**
 - Los precios de los cursos deben poder visualizarse en **euros (€)**, **dólares ($)** y **libras (£)**.
 - Implementar un **selector de moneda** en la interfaz que permita a los usuarios cambiar la moneda de los precios mostrados.
 - No es necesario implementar una conversión real de monedas, simplemente mostrar los precios en la moneda seleccionada.
 - Guardar la selección de moneda del usuario en el **localStorage** para que se conserve entre sesiones.
 
-#### **8.2 Internacionalización (i18n)**
+### **8.2 Internacionalización (i18n)**
 - La plataforma debe estar disponible en **español (es)** e **inglés (en)**.
 - Implementar un **selector de idioma** en la interfaz que permita cambiar entre idiomas.
 - Puedes utilizar una biblioteca de astro o manejar la traducción de los textos mediante archivos JSON.
