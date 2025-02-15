@@ -94,6 +94,7 @@ En esta práctica, el objetivo es desarrollar una **página de venta de cursos**
 4. **Diálogo de Video**:
    - Al dar clic en “Ver Contenido” (si está comprado), muestra un **video** (puede estar embebido de YouTube/Vimeo o un archivo local).  
    - Botón de cerrar para volver a la página.
+   - Muestra el video (con `autoplay` sería óptimo) con detalles del temario. 
 
 5. **Extras para incrementar la nota (2pts)**:
    - **Reviews** o valoraciones de usuarios con estrellas (puede ser un mock).  
